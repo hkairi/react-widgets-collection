@@ -26,7 +26,7 @@ var FacebookWidget= React.createClass({
 
   render: function(){
     return(
-      React.createElement("div", null, 
+      React.createElement("div", {className: "facebookWidget"}, 
         React.createElement("img", {src: this.state.image_url}), 
         React.createElement("input", {type: "text", 
                ref: "f_id", 
@@ -38,5 +38,5 @@ var FacebookWidget= React.createClass({
 });
 
 React.render(
-  React.createElement(FacebookWidget, null), document.getElementById('content')
+  React.createElement(FacebookWidget, null), document.getElementById('facebook-widget')
 );

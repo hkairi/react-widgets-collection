@@ -26,7 +26,7 @@ var FacebookWidget= React.createClass({
 
   render: function(){
     return(
-      <div>
+      <div className="facebookWidget">
         <img src={this.state.image_url} />
         <input type='text'
                ref ='f_id'
@@ -38,5 +38,5 @@ var FacebookWidget= React.createClass({
 });
 
 React.render(
-  <FacebookWidget />, document.getElementById('content')
+  <FacebookWidget />, document.getElementById('facebook-widget')
 );
