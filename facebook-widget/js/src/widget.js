@@ -21,7 +21,7 @@ var FacebookWidget= React.createClass({
 
   fetchImage: function(){
     var _pseudo = this.refs.f_id.getDOMNode().value.trim() ;
-    if ( _pseudo !== '' ) this.set_image_url( _pseudo );
+    if ( _pseudo !== '' ) { this.set_image_url( _pseudo ); }
   },
 
   render: function(){
