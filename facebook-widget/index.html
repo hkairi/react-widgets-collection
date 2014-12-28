@@ -2,21 +2,13 @@
 <html lang='fr'>
   <head>
     <title>React.js collection of widgets</title>
-    <style>
-      div#facebookWidget, div#facebook-widget{
-        width: 200px;
-        float: left;
-        padding: 2px;
-      }
-      input[type='text']{
-        width: 194px;
-        float: left;
-        margin:2px 0;
-      }
-    </style>
+    <link rel='stylesheet' href='css/bootstrap.min.css' />
+    <link rel='stylesheet' href='css/style.css' />
   </head>
   <body>
-    <div id="facebook-widget"></div>
+    <div class='container'>
+      <div id="facebook-widget" class='col-md-3'></div>
+    </div>
 
     <script src="js/lib/react.0.12.1.js"></script>
     <script src="js/lib/jsxt.js"></script>
