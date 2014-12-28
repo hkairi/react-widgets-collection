@@ -40,6 +40,3 @@ var FacebookWidget= React.createClass({
 React.render(
   React.createElement(FacebookWidget, null), document.getElementById('facebook-widget')
 );
-React.render(
-  React.createElement(FacebookWidget, null), document.getElementById('facebook-widget2')
-);
