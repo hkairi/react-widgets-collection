@@ -1,4 +1,4 @@
-var React;
+var React, $;
 
 var FacebookWidget= React.createClass({
   displayName: 'facebook-widget',
@@ -10,13 +10,18 @@ var FacebookWidget= React.createClass({
       pseudo    : 'hkairi',
       taille    : 200,
       options   : 'picture?width=200',
-      image_url : ''
+      image_url : '',
+      fullName  : ''
     };
   },
 
   set_image_url: function( pseudo ){
     var _url = this.state.graph_url + pseudo + '/' + this.state.options;
     this.setState({ image_url : _url });
+    $.getJSON(this.state.graph_url + pseudo).then(function(d){
+      var _name = d.first_name + " " + d.last_name;
+      this.setState({ fullName: _name });
+    }.bind(this));
   },
 
   fetchImage: function(){
@@ -27,6 +32,7 @@ var FacebookWidget= React.createClass({
   render: function(){
     return(
       <div className="facebookWidget">
+        <h3>{this.state.fullName}</h3>
         <img src={this.state.image_url} />
         <input type='text'
                ref ='f_id'
