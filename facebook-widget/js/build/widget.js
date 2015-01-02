@@ -18,10 +18,12 @@ var FacebookWidget= React.createClass({
   set_image_url: function( pseudo ){
     var _url = this.state.graph_url + pseudo + '/' + this.state.options;
     this.setState({ image_url : _url });
-    $.getJSON(this.state.graph_url + pseudo).then(function(d){
-      var _name = d.first_name + " " + d.last_name;
-      this.setState({ fullName: _name });
-    }.bind(this));
+
+    $.getJSON(this.state.graph_url + pseudo).then(
+      function(data){
+        this.setState({ fullName: data.name });
+      }.bind(this)
+    );
   },
 
   fetchImage: function(){
